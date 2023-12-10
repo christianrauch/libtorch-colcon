@@ -8,12 +8,13 @@ ExternalProject_Add(${PROJECT_NAME}
   GIT_TAG                 v2.1.1
   GIT_SUBMODULES_RECURSE  ON
   GIT_SHALLOW             ON
+  GIT_PROGRESS            ON
 
   CMAKE_GENERATOR         Ninja
   CMAKE_ARGS              -D BUILD_SHARED_LIBS:BOOL=ON
                           -D CMAKE_BUILD_TYPE:STRING=Release
                           -D BUILD_PYTHON:BOOL=OFF
                           -D USE_TENSORRT:BOOL=ON
-                          -D USE_VULKAN:BOOL=ON
+                          -D USE_VULKAN:BOOL=OFF
                           -D USE_MKLDNN:BOOL=ON
 )
