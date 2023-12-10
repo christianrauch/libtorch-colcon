@@ -2,10 +2,13 @@
 <?xml-model href="http://download.ros.org/schema/package_format3.xsd" schematypens="http://www.w3.org/2001/XMLSchema"?>
 <package format="3">
   <name>libtorch</name>
-  <version>0.0.0</version>
+  <version>2.1.1</version>
   <description>PyTorch C++ API</description>
   <maintainer email="Rauch.Christian@gmx.de">Christian Rauch</maintainer>
   <license>MIT</license>
+
+  <buildtool_depend>cmake</buildtool_depend>
+  <buildtool_depend>git</buildtool_depend>
 
   <export>
     <build_type>cmake</build_type>
