@@ -1,0 +1,14 @@
+# - Config file for the libtorch package
+# It defines the following variables
+#  libtorch_INCLUDE_DIRS - include directories for FooBar
+#  libtorch_LIBRARIES    - libraries to link against
+#  libtorch_EXECUTABLE   - the bar executable
+
+set(libtorch_INCLUDE_DIRS "@CONF_INCLUDE_DIRS@")
+
+# Our library dependencies (contains definitions for IMPORTED targets)
+include("${libtorch_DIR}/export_libtorch.cmake")
+
+# These are IMPORTED targets created by libtorchTargets.cmake
+
+
