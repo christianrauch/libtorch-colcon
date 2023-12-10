@@ -8,6 +8,7 @@
   <license>MIT</license>
 
   <buildtool_depend>cmake</buildtool_depend>
+  <buildtool_depend>ninja-build</buildtool_depend>
   <buildtool_depend>git</buildtool_depend>
 
   <build_depend>libvulkan-dev</build_depend>
