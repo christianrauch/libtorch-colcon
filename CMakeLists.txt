@@ -14,6 +14,8 @@ ExternalProject_Add(${PROJECT_NAME}
   CMAKE_ARGS              -D BUILD_SHARED_LIBS:BOOL=ON
                           -D CMAKE_BUILD_TYPE:STRING=Release
                           -D BUILD_PYTHON:BOOL=OFF
+                          -D USE_CUDA:BOOL=ON
+                          -D USE_MAGMA:BOOL=ON
                           -D USE_TENSORRT:BOOL=ON
                           -D USE_VULKAN:BOOL=OFF
                           -D USE_MKLDNN:BOOL=ON
