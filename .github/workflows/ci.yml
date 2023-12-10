@@ -10,12 +10,6 @@ jobs:
       image: ubuntu:22.04
 
     steps:
-    # install "Intel oneAPI Math Kernel Library"
-    # TODO: add to rosdeps
-    - run: |
-        apt update
-        apt install -y libmkl-dev
-
     - uses: actions/checkout@v4
 
     - uses: ros-tooling/setup-ros@v0.7
