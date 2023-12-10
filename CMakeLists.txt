@@ -16,7 +16,7 @@ ExternalProject_Add(${PROJECT_NAME}
                           -D BUILD_PYTHON:BOOL=OFF
                           -D USE_CUDA:BOOL=ON
                           -D USE_MAGMA:BOOL=ON
-                          -D USE_TENSORRT:BOOL=ON
+                          -D USE_TENSORRT:BOOL=OFF
                           -D USE_VULKAN:BOOL=OFF
-                          -D USE_MKLDNN:BOOL=ON
+                          -D USE_MKLDNN:BOOL=OFF
 )
