@@ -1,16 +1,19 @@
 cmake_minimum_required(VERSION 3.8)
 project(libtorch)
 
-set(libtorch_MAJOR_VERSION 0)
-set(libtorch_MINOR_VERSION 0)
-set(libtorch_PATCH_VERSION 0)
-set(libtorch_VERSION
-  ${libtorch_MAJOR_VERSION}.${libtorch_MINOR_VERSION}.${libtorch_PATCH_VERSION})
+include(ExternalProject)
 
-if(CMAKE_COMPILER_IS_GNUCXX OR CMAKE_CXX_COMPILER_ID MATCHES "Clang")
-  add_compile_options(-Wall -Wextra -Wpedantic)
-endif()
+ExternalProject_Add(${PROJECT_NAME}
+  GIT_REPOSITORY          https://github.com/pytorch/pytorch.git
+  GIT_TAG                 v2.1.1
+  GIT_SUBMODULES_RECURSE  ON
+  GIT_SHALLOW             ON
 
-# uncomment the following section in order to fill in
-# further dependencies manually.
-# find_package(<dependency> REQUIRED)
+  CMAKE_GENERATOR         Ninja
+  CMAKE_ARGS              -D BUILD_SHARED_LIBS:BOOL=ON
+                          -D CMAKE_BUILD_TYPE:STRING=Release
+                          -D BUILD_PYTHON:BOOL=OFF
+                          -D USE_TENSORRT:BOOL=ON
+                          -D USE_VULKAN:BOOL=ON
+                          -D USE_MKLDNN:BOOL=ON
+)
