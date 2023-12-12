@@ -13,6 +13,7 @@
 
   <!-- <build_depend>libvulkan-dev</build_depend> -->
   <!-- <build_depend>nvidia-cuda-dev</build_depend> -->
+  <build_depend>python3</build_depend>
 
   <export>
     <build_type>cmake</build_type>
