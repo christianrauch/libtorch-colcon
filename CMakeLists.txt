@@ -15,7 +15,7 @@ ExternalProject_Add(${PROJECT_NAME}
                           -D CMAKE_BUILD_TYPE:STRING=Release
                           # -D CMAKE_CXX_STANDARD=17
                           # -D BUILD_PYTHON:BOOL=OFF
-                          -D USE_CUDA:BOOL=ON
+                          # -D USE_CUDA:BOOL=ON
                           # -D USE_NCCL:BOOL=OFF
                           # -D USE_MAGMA:BOOL=ON
                           # -D USE_TENSORRT:BOOL=OFF
