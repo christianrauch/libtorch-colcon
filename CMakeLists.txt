@@ -4,11 +4,8 @@ project(libtorch)
 include(ExternalProject)
 
 ExternalProject_Add(${PROJECT_NAME}
-  GIT_REPOSITORY          https://github.com/pytorch/pytorch.git
-  GIT_TAG                 v2.1.1
-  GIT_SUBMODULES_RECURSE  ON
-  GIT_SHALLOW             ON
-  GIT_PROGRESS            ON
+  URL                     https://github.com/pytorch/pytorch/releases/download/v2.1.2/pytorch-v2.1.2.tar.gz
+  URL_HASH                MD5=99afc663efe0dfe7fb8296b222e6eec8
 
   CMAKE_GENERATOR         Ninja
   CMAKE_ARGS              -D BUILD_SHARED_LIBS:BOOL=ON
