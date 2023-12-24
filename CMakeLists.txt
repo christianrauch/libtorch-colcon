@@ -47,6 +47,9 @@ ExternalProject_Add(${PROJECT_NAME}
   INSTALL_COMMAND ""
   # INSTALL_COMMAND
   #   COMMAND ${CMAKE_COMMAND} -E copy_directory ${CMAKE_BINARY_DIR}/${PROJECT_NAME}-prefix/src/${PROJECT_NAME}-build/pytorch-install ${CMAKE_INSTALL_PREFIX}
+
+  # PATCH_COMMAND
+  #   sed -i "s#${TORCH_INSTALL_PREFIX}/lib#${TORCH_INSTALL_PREFIX}/lib/TODO#g" cmake/TorchConfig.cmake.in
 )
 
 # ExternalProject_Add(${PROJECT_NAME}
@@ -67,18 +70,18 @@ ExternalProject_Add(${PROJECT_NAME}
 ExternalProject_Get_Property(${PROJECT_NAME} BINARY_DIR)
 set(TORCH_PATH ${BINARY_DIR}/pytorch-install)
 
-include(GNUInstallDirs)
+# include(GNUInstallDirs)
 
 install(DIRECTORY ${TORCH_PATH}/include/
-    DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}
+    DESTINATION include
     FILES_MATCHING PATTERN "*.h*"
 )
 
 install(DIRECTORY ${TORCH_PATH}/lib/
-    DESTINATION ${CMAKE_INSTALL_LIBDIR}
+    DESTINATION lib
     FILES_MATCHING PATTERN "*.so*"
 )
 
 install(DIRECTORY ${TORCH_PATH}/share/
-    DESTINATION ${CMAKE_INSTALL_DATADIR}
+    DESTINATION share
 )
