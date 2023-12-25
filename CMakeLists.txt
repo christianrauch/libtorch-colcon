@@ -4,8 +4,11 @@ project(libtorch)
 include(ExternalProject)
 
 ExternalProject_Add(${PROJECT_NAME}
-  URL                     https://github.com/pytorch/pytorch/releases/download/v2.1.2/pytorch-v2.1.2.tar.gz
-  URL_HASH                MD5=99afc663efe0dfe7fb8296b222e6eec8
+  # URL                     https://github.com/pytorch/pytorch/releases/download/v2.1.2/pytorch-v2.1.2.tar.gz
+  # URL_MD5                 99afc663efe0dfe7fb8296b222e6eec8
+
+  URL                     https://github.com/pytorch/pytorch/releases/download/v1.13.1/pytorch-v1.13.1.tar.gz
+  URL_MD5                 dd86834278b6a1cd9065251b88439af6
 
   # CMAKE_GENERATOR         Ninja
 
