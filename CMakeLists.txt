@@ -7,8 +7,11 @@ ExternalProject_Add(${PROJECT_NAME}
   # URL                     https://github.com/pytorch/pytorch/releases/download/v2.1.2/pytorch-v2.1.2.tar.gz
   # URL_MD5                 99afc663efe0dfe7fb8296b222e6eec8
 
-  URL                     https://github.com/pytorch/pytorch/releases/download/v1.13.1/pytorch-v1.13.1.tar.gz
-  URL_MD5                 dd86834278b6a1cd9065251b88439af6
+  # URL                     https://github.com/pytorch/pytorch/releases/download/v1.13.1/pytorch-v1.13.1.tar.gz
+  # URL_MD5                 dd86834278b6a1cd9065251b88439af6
+
+  URL                     https://github.com/pytorch/pytorch/releases/download/v1.10.2/pytorch-v1.10.2.tar.gz
+  URL_MD5                 80754d03e306969417d4090606a8c712
 
   # CMAKE_GENERATOR         Ninja
 
