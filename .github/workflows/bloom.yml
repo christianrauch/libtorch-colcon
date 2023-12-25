@@ -17,7 +17,7 @@ jobs:
     - name: install dependencies
       run: |
         apt update
-        apt install -y python3-bloom python3-rosdep dpkg-dev debhelper
+        apt install -y python3-bloom python3-rosdep dpkg-dev debhelper fakeroot
         rm /etc/ros/rosdep/sources.list.d/20-default.list
         rosdep init
         rosdep update
