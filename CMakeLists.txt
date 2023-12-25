@@ -3,9 +3,6 @@ project(libtorch)
 
 include(ExternalProject)
 
-# the nvcc in the Ubuntu repos does not seem to support C++17 and throws error:
-# "/usr/include/c++/11/bits/std_function.h:435:145: error: parameter packs not expanded with ‘...’:"
-
 ExternalProject_Add(${PROJECT_NAME}
   URL                     https://github.com/pytorch/pytorch/releases/download/v2.1.2/pytorch-v2.1.2.tar.gz
   URL_MD5                 99afc663efe0dfe7fb8296b222e6eec8
@@ -40,8 +37,10 @@ ExternalProject_Add(${PROJECT_NAME}
       -G Ninja
       -D BUILD_SHARED_LIBS:BOOL=ON
       -D CMAKE_BUILD_TYPE:STRING=Release
+      -D CMAKE_C_COMPILER=gcc-10
+      -D CMAKE_CXX_COMPILER=g++-10
       -D BUILD_PYTHON:BOOL=OFF
-      -D USE_CUDA:BOOL=OFF # error: parameter packs not expanded with ‘...’:
+      -D USE_CUDA:BOOL=ON
       -D USE_CUDNN:BOOL=ON
       -D USE_CUSPARSELT:BOOL=OFF
       -D USE_NCCL:BOOL=ON

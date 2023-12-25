@@ -22,6 +22,7 @@ jobs:
         rosdep init
         rosdep update
         apt install -y nvidia-cuda-toolkit python3-typing-extensions
+        apt install -y g++-10
 
     - name: check nvcc
       run: |

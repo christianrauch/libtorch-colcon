@@ -14,6 +14,10 @@ jobs:
 
     - uses: ros-tooling/setup-ros@v0.7
 
+    - name: insall GCC 10
+      run: |
+        sudo apt install -y g++-10
+
     - uses: ros-tooling/action-ros-ci@v0.3
       with:
         package-name: libtorch
