@@ -79,7 +79,7 @@ install(DIRECTORY ${TORCH_PATH}/include/
 
 install(DIRECTORY ${TORCH_PATH}/lib/
     DESTINATION lib
-    FILES_MATCHING PATTERN "*.so*"
+    # FILES_MATCHING PATTERN "*.so*"
 )
 
 install(DIRECTORY ${TORCH_PATH}/share/
