@@ -38,7 +38,7 @@ ExternalProject_Add(${PROJECT_NAME}
       -D USE_CUDA:BOOL=ON
       -D USE_CUDNN:BOOL=ON
       -D USE_CUSPARSELT:BOOL=OFF
-      -D USE_NCCL:BOOL=OFF # error: parameter packs not expanded with ‘...’:
+      -D USE_NCCL:BOOL=ON
       -D USE_MAGMA:BOOL=ON
       -D CMAKE_SHARED_LINKER_FLAGS="-fno-lto"
       -D CMAKE_INSTALL_PREFIX:PATH=../pytorch-install
