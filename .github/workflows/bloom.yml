@@ -8,8 +8,14 @@ jobs:
 
     container:
       image: ubuntu:22.04
+      volumes:
+        - /mnt:/tmp
 
     steps:
+    - run: |
+        chmod 777 /tmp
+        df -h
+
     - uses: actions/checkout@v4
 
     - uses: ros-tooling/setup-ros@v0.7
