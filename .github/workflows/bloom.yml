@@ -40,3 +40,8 @@ jobs:
       run: |
         bloom-generate rosdebian --ros-distro humble
         fakeroot debian/rules binary
+
+    - name: check free space
+      if: always()
+      run: |
+        df -h
