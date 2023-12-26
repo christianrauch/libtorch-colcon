@@ -23,22 +23,25 @@ jobs:
     - name: install dependencies
       run: |
         apt update
-        apt install -y python3-bloom python3-rosdep dpkg-dev debhelper fakeroot
+        apt install -y python3-bloom python3-rosdep dpkg-dev debhelper devscripts equivs fakeroot
         rm /etc/ros/rosdep/sources.list.d/20-default.list
         rosdep init
         rosdep update
-        apt install -y nvidia-cuda-toolkit python3-typing-extensions
-        apt install -y g++-10
+
+    # https://gist.github.com/awesomebytes/196eab972a94dd8fcdd69adfe3bd1152
+    - name: set up debian package
+      run: |
+        bloom-generate rosdebian --ros-distro humble
+        mk-build-deps
+        apt install -y ./ros-*-build-deps*.deb
 
     - name: check nvcc
       run: |
         which nvcc
         nvcc --version
 
-    # https://gist.github.com/awesomebytes/196eab972a94dd8fcdd69adfe3bd1152
-    - name: create debian package
+    - name: build debian package
       run: |
-        bloom-generate rosdebian --ros-distro humble
         fakeroot debian/rules binary
 
     - name: check free space
